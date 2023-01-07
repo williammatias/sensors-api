@@ -5,6 +5,11 @@ import { SensorService } from './sensor.service';
 export class SensorController {
   constructor(private readonly sensorService: SensorService) {}
 
+  @Get()
+  async getAll() {
+    return this.sensorService.getAll();
+  }
+
   @Post()
   async create(@Body() sensorData: any) {
     return this.sensorService.create(sensorData);
